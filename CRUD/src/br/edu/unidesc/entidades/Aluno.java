@@ -47,8 +47,8 @@ public class Aluno {
 		LocalDateTime data = LocalDateTime.now();
 		
 
-		 Random random = new Random();
-		 int aleatorio = random.nextInt(100);
+		Random random = new Random();
+		int aleatorio = random.nextInt(100);
 		
 		
 		int YY = data.getYear();
