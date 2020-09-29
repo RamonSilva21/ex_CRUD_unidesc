@@ -59,7 +59,7 @@ public class AlunoController implements AlunoContract {
 	}
 
 	@Override
-	public void atualizarAluno(String cpf) {
+	public String atualizarAluno(String cpf) {
 		
 		
 		//Verification attribute
@@ -82,19 +82,23 @@ public class AlunoController implements AlunoContract {
 				alunoFound = true;
 			}
 		}
+		return null;
 	}
 		
 
 	@Override
-	public void deleteALuno(String cpf) {
+	public Boolean deleteALuno(String cpf) {
 		
 		Aluno alunoRecovered = searchAluno(cpf);
 		
 		if(alunoRecovered != null) {
 			System.out.println("Removendo o aluno....");
+			//Removendo o Aluno da List
 			students.remove(alunoRecovered);
-			System.out.println("Ação concluída com sucesso!");
+			System.out.println("Aluno REMOVIDO!");
+			return true;
 		}
+		return false;
 		
 	}
 	
