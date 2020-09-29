@@ -13,14 +13,14 @@ public class TestMain {
 		controller.criarAluno();
 		
 		controller.searchAluno("");
-		
 		controller.atualizarAluno("");
-		
 		controller.searchAluno("");
-		
+
 		controller.deleteALuno("");
-		
+		System.out.println("");
 		controller.searchAluno("");
+
+		
 	}
 
 }

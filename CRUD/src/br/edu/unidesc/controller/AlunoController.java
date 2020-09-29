@@ -25,7 +25,7 @@ public class AlunoController implements AlunoContract {
 		Scanner getin = new Scanner(System.in);
 		
 		//Entering search information
-		System.out.println("\nInforme o número de CPF: ");
+		System.out.println("\nInforme o nÃºmero de CPF: ");
 		aluno.setCpf(getin.nextLine());
 		System.out.println("Informe o nome: ");
 		aluno.setNome(getin.nextLine());
