@@ -52,7 +52,7 @@ public class Aluno {
 		
 		
 		int YY = data.getYear();
-		int MM = data.getMonthValue() + 1;
+		int MM = data.getMonthValue();
 		int DD = data.getDayOfMonth();
 		int hh = data.getHour();
 		int mm = data.getMinute();
