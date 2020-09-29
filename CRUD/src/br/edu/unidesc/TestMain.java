@@ -15,9 +15,7 @@ public class TestMain {
 		controller.searchAluno("");
 		controller.atualizarAluno("");
 		controller.searchAluno("");
-
 		controller.deleteALuno("");
-		System.out.println("");
 		controller.searchAluno("");
 
 		

@@ -66,7 +66,7 @@ public class AlunoController implements AlunoContract {
 		boolean alunoFound = false;
 		
 		//Scanner instance
-		@SuppressWarnings("resource")
+		
 		Scanner getin = new Scanner(System.in);
 		
 		
@@ -91,14 +91,17 @@ public class AlunoController implements AlunoContract {
 		Aluno alunoRecovered = searchAluno(cpf);
 		
 		if(alunoRecovered != null) {
+			System.out.println("Removendo o aluno....");
 			students.remove(alunoRecovered);
+			System.out.println("Ação concluída com sucesso!");
 		}
 		
 	}
-
+	
 	
 	private void saveEntidade(Aluno aluno) {
 		students.add(aluno);
+		System.out.println("Aluno salvo na base!");
 		
 	}
 
