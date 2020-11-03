@@ -1,14 +1,12 @@
-package br.edu.unidesc.interfaces;
+package interfaces;
 
-import br.edu.unidesc.entidades.Aluno;
+import entidades.Aluno;
 
 public interface AlunoContract {
-	
-	Aluno criarAluno();			//C REATE
-	Aluno searchAluno(String cpf);		//R EAD
-	String atualizarAluno(String cpf);	//U PDATE
-	Boolean deleteALuno(String cpf);	//D ELETE
-	
+
+    Aluno newAluno(Aluno student);
+    Aluno searchAluno(String cpf);
+    Aluno attAluno(Aluno student);
+    Boolean deleteAluno(String cpf);
 
 }
-
