@@ -1,82 +1,65 @@
 package br.edu.unidesc.entidades;
+package entidades;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Random;
 
 public class Aluno {
-	
-	private String nome;
-	private String cpf;
-	private String curso;
-	private String matricula;
-	
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	
-	public String getCpf() {
-		return cpf;
-	}
-	
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	
-	
-	public String getCurso() {
-		return curso;
-	}
-	
-	public void setCurso(String curso) {
-		this.curso = curso;
-	}
-	
-	
-	public String getMatricula() {
-		return matricula;
-	}
+    private String nome;
+    private String cpf;
+    private String curso;
+    private String matricula;
 
-	public void setMatricula() {
-		
-		LocalDateTime data = LocalDateTime.now();
-		
 
-		Random random = new Random();
-		int aleatorio = random.nextInt(100);
-		
-		
-		int YY = data.getYear();
-		int MM = data.getMonthValue();
-		int DD = data.getDayOfMonth();
-		int hh = data.getHour();
-		int mm = data.getMinute();
-		int ss = data.getSecond();
-		int RR = aleatorio;
-		String SS = "";
-		
-		if(MM < 6) {
-			SS = "01";
-		}else {
-			SS = "02";
-		}
-		
-		Integer.toString(MM);
-		Integer.toString(DD);
-		Integer.toString(hh);
-		Integer.toString(mm);
-		Integer.toString(ss);
-		Integer.toString(RR);
-			
-		
-		
-		this.matricula = YY + MM + DD + hh + mm + ss+ "-" + RR + "-" + SS;
-	}
-	 
-	
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula() {
+        //FIRST PART OF MATRICULA = 'YEAR, MONTH, DAY, HOUR, MINUTE, SECOND'
+        Calendar data = Calendar.getInstance();
+        String mat = "yyyyMMddHHmmss";
+        SimpleDateFormat formato = new SimpleDateFormat(mat);
+        mat = formato.format(data.getTime());
+
+        //RANDOM NUMBER
+        Random random = new Random();
+        String aleatorio = Integer.toString(random.nextInt(100));
+
+        //DISCOVERING THE SEMESTER
+        String SS = "";
+
+        if (data.MONTH >= 6){
+            SS = "01";
+        }else{
+            SS = "02";
+        }
+
+        this.matricula = mat +"-"+aleatorio+"-"+SS;
+    }
 }
