@@ -1,7 +1,7 @@
-package controller;
+package br.edu.unidesc.controller;
 
-import entidades.Aluno;
-import interfaces.AlunoContract;
+import br.edu.unidesc.entidades.Aluno;
+import br.edu.unidesc.interfaces.AlunoContract;
 
 import java.util.ArrayList;
 import java.util.List;
