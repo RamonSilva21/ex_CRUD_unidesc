@@ -1,5 +1,4 @@
 package br.edu.unidesc.entidades;
-package entidades;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
